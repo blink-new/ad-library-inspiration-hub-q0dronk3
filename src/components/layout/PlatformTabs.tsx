@@ -9,10 +9,11 @@ interface PlatformTabsProps {
 
 const platforms = [
   { id: 'all', name: 'All Platforms', icon: '🌐' },
-  { id: 'linkedin', name: 'LinkedIn', icon: '💼' },
-  { id: 'meta', name: 'Meta', icon: '📘' },
-  { id: 'google', name: 'Google', icon: '🔍' },
-  { id: 'pinterest', name: 'Pinterest', icon: '📌' }
+  { id: 'google-ads', name: 'Google Ads', icon: '🔍' },
+  { id: 'bing-ads', name: 'Bing Ads', icon: '🔎' },
+  { id: 'linkedin-ads', name: 'LinkedIn Ads', icon: '💼' },
+  { id: 'meta-ads', name: 'Meta Ads', icon: '📘' },
+  { id: 'pinterest-ads', name: 'Pinterest Ads', icon: '📌' }
 ]
 
 export function PlatformTabs({ selectedPlatforms, onPlatformChange, adCounts }: PlatformTabsProps) {
@@ -30,7 +31,7 @@ export function PlatformTabs({ selectedPlatforms, onPlatformChange, adCounts }: 
     <div className="border-b bg-background">
       <div className="container mx-auto px-4">
         <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full">
-          <TabsList className="grid w-full grid-cols-5 h-auto p-1 bg-muted/50">
+          <TabsList className="grid w-full grid-cols-6 h-auto p-1 bg-muted/50">
             {platforms.map((platform) => (
               <TabsTrigger
                 key={platform.id}

@@ -17,9 +17,8 @@ interface FilterSidebarProps {
 
 const filterOptions = {
   industries: [
-    'Technology', 'Finance', 'Healthcare', 'E-commerce', 'Education',
-    'Real Estate', 'Travel', 'Food & Beverage', 'Fashion', 'Automotive',
-    'Entertainment', 'B2B Services', 'Non-profit', 'Gaming', 'Fitness'
+    'B2B',
+    'Shop'
   ],
   angles: [
     'Problem/Solution', 'Social Proof', 'Urgency/Scarcity', 'Emotional Appeal',
@@ -33,9 +32,23 @@ const filterOptions = {
     'Customer Retention', 'Product Launch', 'Recruitment', 'Local Awareness'
   ],
   adFormats: [
-    'Single Image', 'Carousel', 'Video', 'Collection', 'Stories',
-    'Reels/Short Video', 'Text Only', 'Slideshow', 'Interactive',
-    'Playable Ad', 'Canvas/Instant Experience', 'Lead Form'
+    'Text Ad',
+    'Video',
+    'Carousel',
+    'Image Ad',
+    'HTML 5',
+    'Sponsored Message'
+  ],
+  funnelStages: [
+    'Awareness',
+    'Consideration',
+    'Conversion',
+    'Retargeting'
+  ],
+  targetGroups: [
+    'CMO',
+    'HR',
+    'IT'
   ]
 }
 
@@ -75,6 +88,8 @@ export function FilterSidebar({ isOpen, onClose, filters, onFiltersChange }: Fil
       angles: [],
       campaignGoals: [],
       adFormats: [],
+      funnelStages: [],
+      targetGroups: [],
       searchQuery: '',
       sortBy: 'date',
       sortOrder: 'desc'
@@ -85,7 +100,9 @@ export function FilterSidebar({ isOpen, onClose, filters, onFiltersChange }: Fil
     return filters.industries.length + 
            filters.angles.length + 
            filters.campaignGoals.length + 
-           filters.adFormats.length
+           filters.adFormats.length +
+           filters.funnelStages.length +
+           filters.targetGroups.length
   }
 
   return (

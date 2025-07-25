@@ -16,30 +16,51 @@ interface AddAdModalProps {
 }
 
 const platforms = [
-  { value: 'linkedin', label: 'LinkedIn' },
-  { value: 'meta', label: 'Meta (Facebook/Instagram)' },
-  { value: 'google', label: 'Google Ads' },
-  { value: 'pinterest', label: 'Pinterest' }
+  { value: 'google-ads', label: 'Google Ads' },
+  { value: 'bing-ads', label: 'Bing Ads' },
+  { value: 'linkedin-ads', label: 'LinkedIn Ads' },
+  { value: 'meta-ads', label: 'Meta Ads' },
+  { value: 'pinterest-ads', label: 'Pinterest Ads' }
 ]
 
 const industries = [
-  'Technology', 'Finance', 'Healthcare', 'E-commerce', 'Education',
-  'Real Estate', 'Travel', 'Food & Beverage', 'Fashion', 'Automotive'
+  'B2B',
+  'Shop'
 ]
 
 const angles = [
   'Problem/Solution', 'Social Proof', 'Urgency/Scarcity', 'Emotional Appeal',
-  'Educational', 'Comparison', 'Testimonial', 'Behind the Scenes'
+  'Educational', 'Comparison', 'Testimonial', 'Behind the Scenes',
+  'User Generated Content', 'Seasonal/Trending', 'Feature Highlight',
+  'Brand Story', 'How-to/Tutorial', 'Before/After', 'Community'
 ]
 
 const campaignGoals = [
   'Brand Awareness', 'Lead Generation', 'Sales/Conversion', 'Traffic',
-  'Engagement', 'App Downloads', 'Event Promotion', 'Retargeting'
+  'Engagement', 'App Downloads', 'Event Promotion', 'Retargeting',
+  'Customer Retention', 'Product Launch', 'Recruitment', 'Local Awareness'
 ]
 
 const adFormats = [
-  'Single Image', 'Carousel', 'Video', 'Collection', 'Stories',
-  'Reels/Short Video', 'Text Only', 'Slideshow'
+  'Text Ad',
+  'Video',
+  'Carousel',
+  'Image Ad',
+  'HTML 5',
+  'Sponsored Message'
+]
+
+const funnelStages = [
+  'Awareness',
+  'Consideration',
+  'Conversion',
+  'Retargeting'
+]
+
+const targetGroups = [
+  'CMO',
+  'HR',
+  'IT'
 ]
 
 export function AddAdModal({ isOpen, onClose, onSubmit }: AddAdModalProps) {
@@ -52,6 +73,8 @@ export function AddAdModal({ isOpen, onClose, onSubmit }: AddAdModalProps) {
     angle: '',
     campaignGoal: '',
     adFormat: '',
+    funnelStage: '',
+    targetGroup: '',
     brandName: '',
     ctaText: '',
     targetAudience: '',
@@ -117,6 +140,8 @@ export function AddAdModal({ isOpen, onClose, onSubmit }: AddAdModalProps) {
       angle: '',
       campaignGoal: '',
       adFormat: '',
+      funnelStage: '',
+      targetGroup: '',
       brandName: '',
       ctaText: '',
       targetAudience: '',
@@ -323,6 +348,39 @@ export function AddAdModal({ isOpen, onClose, onSubmit }: AddAdModalProps) {
             </div>
           </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="funnelStage">Funnel Stage *</Label>
+              <Select value={formData.funnelStage} onValueChange={(value) => handleInputChange('funnelStage', value)}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Select funnel stage" />
+                </SelectTrigger>
+                <SelectContent>
+                  {funnelStages.map((stage) => (
+                    <SelectItem key={stage} value={stage}>
+                      {stage}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="targetGroup">Target Group *</Label>
+              <Select value={formData.targetGroup} onValueChange={(value) => handleInputChange('targetGroup', value)}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Select target group" />
+                </SelectTrigger>
+                <SelectContent>
+                  {targetGroups.map((group) => (
+                    <SelectItem key={group} value={group}>
+                      {group}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+
           {/* Optional Fields */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
@@ -372,7 +430,7 @@ export function AddAdModal({ isOpen, onClose, onSubmit }: AddAdModalProps) {
             </Button>
             <Button 
               type="submit" 
-              disabled={!formData.title || !formData.description || !formData.platform || !formData.industry || !formData.angle || !formData.campaignGoal || !formData.adFormat}
+              disabled={!formData.title || !formData.description || !formData.platform || !formData.industry || !formData.angle || !formData.campaignGoal || !formData.adFormat || !formData.funnelStage || !formData.targetGroup}
             >
               Add Ad
             </Button>

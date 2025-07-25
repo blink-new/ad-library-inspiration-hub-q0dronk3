@@ -15,11 +15,13 @@ const sampleAds: Ad[] = [
     title: 'Transform Your Business with AI-Powered Analytics',
     description: 'Discover how leading companies are using our AI platform to increase revenue by 40%. Get started with a free 14-day trial and see the difference data-driven decisions can make.',
     imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
-    platform: 'linkedin',
-    industry: 'Technology',
+    platform: 'linkedin-ads',
+    industry: 'B2B',
     angle: 'Problem/Solution',
     campaignGoal: 'Lead Generation',
-    adFormat: 'Single Image',
+    adFormat: 'Image Ad',
+    funnelStage: 'Awareness',
+    targetGroup: 'CMO',
     tags: ['AI', 'Analytics', 'B2B', 'SaaS'],
     createdAt: '2024-01-15T10:30:00Z',
     userId: 'user1',
@@ -34,11 +36,13 @@ const sampleAds: Ad[] = [
     title: 'The Future of E-commerce is Here',
     description: 'Join thousands of online retailers who have increased their sales by 60% with our all-in-one e-commerce platform. Easy setup, powerful features, unlimited growth.',
     imageUrl: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
-    platform: 'meta',
-    industry: 'E-commerce',
+    platform: 'meta-ads',
+    industry: 'Shop',
     angle: 'Social Proof',
     campaignGoal: 'Sales/Conversion',
     adFormat: 'Carousel',
+    funnelStage: 'Conversion',
+    targetGroup: 'CMO',
     tags: ['E-commerce', 'Online Store', 'Sales'],
     createdAt: '2024-01-14T15:45:00Z',
     userId: 'user1',
@@ -53,11 +57,13 @@ const sampleAds: Ad[] = [
     title: 'Learn Digital Marketing in 30 Days',
     description: 'Master the skills that top marketers use to drive results. Our comprehensive course covers SEO, PPC, social media, and analytics. 95% job placement rate.',
     imageUrl: 'https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=800&h=600&fit=crop',
-    platform: 'google',
-    industry: 'Education',
+    platform: 'google-ads',
+    industry: 'B2B',
     angle: 'Educational',
     campaignGoal: 'Lead Generation',
     adFormat: 'Video',
+    funnelStage: 'Consideration',
+    targetGroup: 'HR',
     tags: ['Education', 'Marketing', 'Career'],
     createdAt: '2024-01-13T09:20:00Z',
     userId: 'user1',
@@ -72,11 +78,13 @@ const sampleAds: Ad[] = [
     title: 'Sustainable Fashion That Doesn\'t Cost the Earth',
     description: 'Beautiful, ethically-made clothing that\'s kind to both you and the planet. Use code EARTH20 for 20% off your first order. Free shipping on orders over $75.',
     imageUrl: 'https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&h=600&fit=crop',
-    platform: 'pinterest',
-    industry: 'Fashion',
+    platform: 'pinterest-ads',
+    industry: 'Shop',
     angle: 'Emotional Appeal',
     campaignGoal: 'Sales/Conversion',
-    adFormat: 'Single Image',
+    adFormat: 'Image Ad',
+    funnelStage: 'Awareness',
+    targetGroup: 'CMO',
     tags: ['Fashion', 'Sustainable', 'Eco-friendly'],
     createdAt: '2024-01-12T14:10:00Z',
     userId: 'user1',
@@ -88,41 +96,45 @@ const sampleAds: Ad[] = [
   },
   {
     id: '5',
-    title: 'Your Dream Home Awaits',
-    description: 'Discover luxury properties in prime locations. Our expert agents have helped over 10,000 families find their perfect home. Schedule your private viewing today.',
+    title: 'IT Infrastructure Solutions That Scale',
+    description: 'Discover cloud solutions that grow with your business. Our expert team has helped over 10,000 companies modernize their IT infrastructure. Schedule your consultation today.',
     imageUrl: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop',
-    platform: 'meta',
-    industry: 'Real Estate',
+    platform: 'bing-ads',
+    industry: 'B2B',
     angle: 'Testimonial',
     campaignGoal: 'Lead Generation',
-    adFormat: 'Collection',
-    tags: ['Real Estate', 'Luxury', 'Home'],
+    adFormat: 'Text Ad',
+    funnelStage: 'Consideration',
+    targetGroup: 'IT',
+    tags: ['IT', 'Cloud', 'Infrastructure'],
     createdAt: '2024-01-11T11:30:00Z',
     userId: 'user1',
     isBookmarked: false,
     engagementScore: 76,
-    brandName: 'PremiumHomes',
-    ctaText: 'View Properties',
-    targetAudience: 'Home buyers, high income earners'
+    brandName: 'CloudTech',
+    ctaText: 'Get Consultation',
+    targetAudience: 'IT decision makers, enterprise companies'
   },
   {
     id: '6',
-    title: 'Fitness Revolution: Transform Your Body in 90 Days',
-    description: 'Join the fitness revolution! Our proven 90-day program has helped 50,000+ people achieve their dream body. Personal trainers, nutrition plans, and 24/7 support included.',
+    title: 'Recruit Top Talent with AI-Powered Hiring',
+    description: 'Join the hiring revolution! Our proven AI platform has helped 50,000+ companies find the perfect candidates 3x faster. Streamline your recruitment process today.',
     imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop',
-    platform: 'linkedin',
-    industry: 'Fitness',
+    platform: 'linkedin-ads',
+    industry: 'B2B',
     angle: 'Before/After',
-    campaignGoal: 'App Downloads',
-    adFormat: 'Video',
-    tags: ['Fitness', 'Health', 'Transformation'],
+    campaignGoal: 'Lead Generation',
+    adFormat: 'Sponsored Message',
+    funnelStage: 'Retargeting',
+    targetGroup: 'HR',
+    tags: ['HR', 'Recruitment', 'AI'],
     createdAt: '2024-01-10T16:45:00Z',
     userId: 'user1',
     isBookmarked: false,
     engagementScore: 94,
-    brandName: 'FitLife',
-    ctaText: 'Download App',
-    targetAudience: 'Health-conscious individuals, 25-45 years old'
+    brandName: 'TalentAI',
+    ctaText: 'Start Free Trial',
+    targetAudience: 'HR professionals, talent acquisition teams'
   }
 ]
 
@@ -137,6 +149,8 @@ function App() {
     angles: [],
     campaignGoals: [],
     adFormats: [],
+    funnelStages: [],
+    targetGroups: [],
     searchQuery: '',
     sortBy: 'date',
     sortOrder: 'desc'
@@ -182,6 +196,16 @@ function App() {
     // Ad format filter
     if (filters.adFormats.length > 0) {
       filtered = filtered.filter(ad => filters.adFormats.includes(ad.adFormat))
+    }
+
+    // Funnel stage filter
+    if (filters.funnelStages.length > 0) {
+      filtered = filtered.filter(ad => filters.funnelStages.includes(ad.funnelStage))
+    }
+
+    // Target group filter
+    if (filters.targetGroups.length > 0) {
+      filtered = filtered.filter(ad => filters.targetGroups.includes(ad.targetGroup))
     }
 
     // Search filter
@@ -252,15 +276,18 @@ function App() {
     return filters.industries.length + 
            filters.angles.length + 
            filters.campaignGoals.length + 
-           filters.adFormats.length
+           filters.adFormats.length +
+           filters.funnelStages.length +
+           filters.targetGroups.length
   }
 
   const getAdCounts = () => {
     const counts: Record<string, number> = {
-      linkedin: 0,
-      meta: 0,
-      google: 0,
-      pinterest: 0
+      'google-ads': 0,
+      'bing-ads': 0,
+      'linkedin-ads': 0,
+      'meta-ads': 0,
+      'pinterest-ads': 0
     }
     
     ads.forEach(ad => {

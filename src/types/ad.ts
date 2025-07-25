@@ -3,11 +3,13 @@ export interface Ad {
   title: string
   description: string
   imageUrl: string
-  platform: 'linkedin' | 'meta' | 'google' | 'pinterest'
+  platform: 'google-ads' | 'bing-ads' | 'linkedin-ads' | 'meta-ads' | 'pinterest-ads'
   industry: string
   angle: string
   campaignGoal: string
   adFormat: string
+  funnelStage: string
+  targetGroup: string
   tags: string[]
   createdAt: string
   userId: string
@@ -24,6 +26,8 @@ export interface FilterOptions {
   angles: string[]
   campaignGoals: string[]
   adFormats: string[]
+  funnelStages: string[]
+  targetGroups: string[]
   searchQuery: string
   sortBy: 'date' | 'engagement' | 'relevance'
   sortOrder: 'asc' | 'desc'
